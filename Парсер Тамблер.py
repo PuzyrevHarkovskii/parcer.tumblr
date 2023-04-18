@@ -22,7 +22,6 @@ while True:
     if len(images) >= 1000:  # Проверяем, что загружено достаточное количество изображений
         break
 
-
 for image in images:
     src = image.get_attribute('src')
     if src.endswith('.jpg') or src.endswith('.png'):
