@@ -6,14 +6,18 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
+
 url = 'https://3rd-world-elite.tumblr.com/'
+
 
 if not os.path.exists('images'):
     os.makedirs('images')
 
 driver = webdriver.Chrome()
 
+
 driver.get(url)
+
 
 while True:
     body = driver.find_element(By.XPATH, '//body')
@@ -22,6 +26,7 @@ while True:
     if len(images) >= 1000:  # Проверяем, что загружено достаточное количество изображений
         break
 
+        
 for image in images:
     src = image.get_attribute('src')
     if src.endswith('.jpg') or src.endswith('.png'):
